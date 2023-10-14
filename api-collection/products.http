@@ -1,0 +1,48 @@
+@baseUrl=http://localhost:3000/api
+
+@resourceName=products
+#Products
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+# @name getFilter
+GET {{baseUrl}}/{{resourceName}}?color=cyan&price_gte=988
+###
+# @name getFilterLike
+GET {{baseUrl}}/{{resourceName}}?name_like=Handmade
+
+###
+# @name getPagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=1
+###
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=desc
+###
+# @name addNew
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+{
+    "categoryId": "db528ecb-644a-4f36-99a2-4e5d3669a7e5",
+    "name": "HW",
+    "color": "O",
+    "price": 10,
+    "description": "The Football Is Good For Training And Recreational Purposes",
+    "thumbnailUrl": "http://placeimg.com/400/400"
+}
+
+###
+# @name update
+PATCH  {{baseUrl}}/{{resourceName}}/AOYN632
+Content-Type: application/json
+
+{
+  "categoryId": "db528ecb-644a-4f36-99a2-4e5d3669a7e5",
+  "name": "HWWWOO",
+  "color": "OOO"
+}
+
+###
+# @name remove
+DELETE  {{baseUrl}}/{{resourceName}}/2
