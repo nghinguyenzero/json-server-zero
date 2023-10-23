@@ -34,7 +34,10 @@ const ramdomBlogs = (n) => {
     Array.from(new Array(n)).forEach(() => {
         const blog = {
             id: faker.random.uuid(),
-            name: faker.commerce.department(),
+            name: faker.commerce.productName(),
+            title: faker.commerce.productMaterial(),
+            author: faker.commerce.productName(),
+            action: faker.database.type(),
             createdAt: Date.now(),
             updatedAt: Date.now(),
         }
