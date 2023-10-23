@@ -36,6 +36,7 @@ const ramdomBlogs = (n) => {
             id: faker.random.uuid(),
             name: faker.commerce.productName(),
             title: faker.commerce.productMaterial(),
+            content: faker.commerce.productDescription(),
             author: faker.commerce.productName(),
             action: faker.database.type(),
             createdAt: Date.now(),
